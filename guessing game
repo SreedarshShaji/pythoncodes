@@ -1,0 +1,32 @@
+import random
+
+sys_choice=random.randint(1,20)
+attempts=5
+print("System has a 'SECRET' number, between 1 and 20.\n You can guess the number and system will give you info about how far and how near you are to the number.")
+print(">6 is too far, >4 is closer <=2 is really close")
+print("You will have 5 chance to get it right.")
+print("Good luck!!!")
+
+while(attempts>0):
+  print("\n\nYou have ",(attempts)," attempts left")
+  attempts-=1
+  user_inp=int(input("Enter your choice"))
+  
+  diff=sys_choice-user_inp
+  
+  if(diff==0):
+    print("Your choice is correct.")
+    print("\n <.:: YOU WON ::.>")
+    break
+  if(diff>=6 or diff<=-6):
+    print("You are too far away")
+    print("_"*25)
+  elif(diff>=4 or diff<=-4):
+    print("You are getting closer")
+    print("_"*25)
+  elif(diff<=4 or diff>=-4):
+    print("You are really closer")
+    print("_"*25)
+    
+    if(attempts==0):
+      print("You have failed.\n\n  The secret number is ",sys_choice,"\n\n<.:: GAME OVER::>")
