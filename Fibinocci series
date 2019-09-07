@@ -1,0 +1,8 @@
+fibi=[0,1]
+limit=int(input("Enter the limit"))
+for i in range(0,limit-1):
+  fibi.append(fibi[i]+fibi[i+1])
+  
+print("The series is: ")
+for i in fibi:
+  print(i,end=", ")
